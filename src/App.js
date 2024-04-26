@@ -134,7 +134,7 @@ function App() {
     try {
       // Fetch JSON data from an external source
       const response = await fetch(
-        "https://raw.githubusercontent.com/AbelOsaretin/Payout-Frontend-V3/master/data.json"
+        "https://raw.githubusercontent.com/AbelOsaretin/Payout-Frontend-V3/main/src/data.json"
       );
       if (!response.ok) {
         throw new Error("Failed to fetch data");
