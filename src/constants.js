@@ -3,29 +3,11 @@ export const abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_admins",
+        name: "admins_",
         type: "address",
       },
     ],
-    name: "AddAdmin",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_to",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256",
-      },
-    ],
-    name: "AdminWithdraw",
+    name: "addAdmin",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -34,11 +16,11 @@ export const abi = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_amount",
+        name: "amount_",
         type: "uint256",
       },
     ],
-    name: "Deposit",
+    name: "deposit",
     outputs: [
       {
         internalType: "bool",
@@ -46,19 +28,6 @@ export const abi = [
         type: "bool",
       },
     ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_admins",
-        type: "address",
-      },
-    ],
-    name: "RemoveAdmin",
-    outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
@@ -125,6 +94,19 @@ export const abi = [
   {
     inputs: [
       {
+        internalType: "address",
+        name: "admins_",
+        type: "address",
+      },
+    ],
+    name: "removeAdmin",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "address[]",
         name: "recipients",
         type: "address[]",
@@ -143,12 +125,17 @@ export const abi = [
   {
     inputs: [
       {
+        internalType: "address",
+        name: "to_",
+        type: "address",
+      },
+      {
         internalType: "uint256",
-        name: "_amount",
+        name: "amount_",
         type: "uint256",
       },
     ],
-    name: "Withdraw",
+    name: "withdraw",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -173,8 +160,27 @@ export const abi = [
     type: "event",
   },
   {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "administrators",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [],
-    name: "Balance",
+    name: "balance",
     outputs: [
       {
         internalType: "uint256",
@@ -187,57 +193,7 @@ export const abi = [
   },
   {
     inputs: [],
-    name: "GetAllAdminWithdrawals",
-    outputs: [
-      {
-        components: [
-          {
-            internalType: "address",
-            name: "withdrawals",
-            type: "address",
-          },
-          {
-            internalType: "uint256",
-            name: "amount",
-            type: "uint256",
-          },
-        ],
-        internalType: "struct Payout.AdminWithdrawalsAndAmount[]",
-        name: "",
-        type: "tuple[]",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "GetAllAmountsWithdrawnByPayee",
-    outputs: [
-      {
-        components: [
-          {
-            internalType: "address",
-            name: "payees",
-            type: "address",
-          },
-          {
-            internalType: "uint256",
-            name: "amount",
-            type: "uint256",
-          },
-        ],
-        internalType: "struct Payout.PayeeAndAmountWithdrawn[]",
-        name: "",
-        type: "tuple[]",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "GetAllDeposits",
+    name: "getAllDeposits",
     outputs: [
       {
         components: [
@@ -262,7 +218,7 @@ export const abi = [
   },
   {
     inputs: [],
-    name: "GetAllPayees",
+    name: "getAllPayees",
     outputs: [
       {
         components: [
@@ -287,7 +243,45 @@ export const abi = [
   },
   {
     inputs: [],
-    name: "USDCAddress",
+    name: "getAllWithdrawals",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "address",
+            name: "withdrawals",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct Payout.WithdrawalsAndAmount[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "itAddress",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "usdcAddress",
     outputs: [
       {
         internalType: "address",
@@ -299,4 +293,4 @@ export const abi = [
     type: "function",
   },
 ];
-export const contractAddress = "0xB4f8709064751078CbaE907F57330910f570bbbe";
+export const contractAddress = "0xF16D177F7a1ea26a676f7bA4E984E85E5640D230";
